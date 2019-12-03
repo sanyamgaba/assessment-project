@@ -1,0 +1,247 @@
+<html>
+<head>
+<link= href="style.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+.n{
+background-image:url("c1.jpg");
+width:98%;
+height:15%;
+text-align:left;
+color:orange;
+text-shadow:2px 6px 9px red;
+padding-top:15px;
+padding-left:30px;
+display:flex;
+}
+.header{
+height:100vh;
+align:center;
+background-image:url("r.jpg");
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:sans-serif;
+}
+.search-field{
+height:50px;
+padding:10px;
+border:none;
+border-radius:20px;
+outline:none;
+}
+.ss{
+width:300px;
+}
+.ds{
+width:300px;
+}
+.cs{
+width:300px;
+}
+.search-btn{
+height:50px;
+width:150px;
+background: #ffeb3b;
+border:none;
+color:#000;
+border-radius:20px;
+outline:none;
+}
+.search-btn:hover{
+background: cyan;
+cursor:pointer;
+}
+.form-box{
+background:rgba(0,0,0,0.5);
+padding:20px;
+}
+.j{
+margin-top:-22px;
+background-color:grey;
+height:27%;
+padding-left:480px
+}
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+.y
+{
+background-color:#1a1a1a;
+width:100%;
+height:40px;
+background-repeat:no repeat;
+}
+ul li
+{
+padding:15px;
+color:white;
+text-align:left;
+display:inline-block;
+}
+
+.x
+{
+background-color:black;
+width:100%;
+height:300px;
+padding-top:30px;
+display:flex;
+}
+.q
+{
+display:flex;
+}
+</style>
+<body>
+<div class="n">
+<a href="file:///C:/Users/total/Desktop/Yam/p.html">
+<img src="l1.jpg" alt="LOGO" height="70" width="70">
+</a>
+<h1 style="padding-left:8px;">HAIOT</h1>
+<h2 style="padding-left:980px;margin-top:-4px;color:white">WORK</h2></br>
+<h2 style="margin-left:-70px;margin-top:18px;color:white">SAVE</h2>
+<h2 style="margin-left:-77px;margin-top:40px;color:white">TRAVEL</h2>
+<h2 style="margin-left:-91px;margin-top:60px;color:white">REPEAT</h2>
+</div>
+<div class="header">
+<form>
+<h1 style="color:yellow;text-shadow:2px 2px 6px red;">Train Between Stations</h1>
+<div class="form-box">
+<input type="text" class="search-field ss" id="src"
+placeholder="Source Station">
+
+<input type="text" class="search-field ds" id="dst"
+placeholder="Destination Station">
+
+<input type="text" class="search-field cs" id="dte"
+placeholder="dd-mm-yyyy">
+<button class="search-btn" onclick="test12()" type="button">Search</button>
+<div id="anss">
+<p></p></div>
+</div>
+</div>
+
+<script>
+function test12(){
+var src=document.getElementById("src").value
+var dst=document.getElementById("dst").value
+var dte=document.getElementById("dte").value
+var anss=document.getElementById("anss")
+        var d=document.getElementById('demo');
+        var url="https://api.railwayapi.com/v2/between/source/"+src+"/dest/"+dst+"/date/"+dte+"/apikey/fgqfnv8852/"
+        var xhr=new XMLHttpRequest();
+        xhr.open('GET',url);
+        xhr.onreadystatechange=test
+
+
+        function test(){
+            if(this.status==200 && this.readyState==4){
+                var q=JSON.parse(this.responseText)
+                console.log(q)
+                 var e=document.getElementById('demo')
+                 for(let i=0;i<5;i++)
+                 {
+                 var x=q.trains[i].name;
+				 var x1=document.createElement("P")
+				 x1.innerHTML=x;
+				 anss.appendChild(x1)
+              }
+                // e.innerHTML=JSON.stringify(this.responseText)
+            }
+
+        }
+
+
+
+        xhr.send();
+
+
+}
+ </script>
+<div class="j">
+<h1>Connect Us On Social Media</h1>
+<a href="https://www.facebook.com/UltimateTraveI/" class="fa fa-facebook"></a>
+<a href="https://twitter.com/ultimatetravei?lang=en" class="fa fa-twitter"></a>
+<a href="https://www.ultimate.travel/" class="fa fa-google"></a>
+<a href="https://www.instagram.com/ultimate.travel/" class="fa fa-instagram"></a>
+</div>
+<div class ="x">
+<div>
+<h2 style="color:white; margin-left:210px;"><ins><span style="color:orange">HAI</span>OT</ins></h2>
+
+<p style="color:white;margin-left:210px;">HAIOT is travelling company<br/> founded in December 2019 by<br/> Sanyam Gaba</p>
+
+<ul style="color:white;list-style-type:none;margin-left:150px;">
+<li> <i class="material-icons"style="font-size:15px;">home</i> New Delhi,IN</li><br />
+<li><i class="material-icons"style="font-size:15px;">mail</i>  gaba.samstar@gmail.com</li><br />
+<li><i class="material-icons"style="font-size:15px;">call</i> 7023461234</li><br />
+
+</ul>
+</div>
+
+<div>
+<h2 style="color:white; margin-left:150px;"><ins>WHAT WE OFFER</ins></h2>
+
+<ul style="color:white;margin-left:150px;">
+<li><a href="#">Railway tickets</a></li><br />
+<li><a href="#">Flight tickets</a></li><br />
+
+</ul>
+</div>
+<a name="contact"></a>
+<div>
+
+<h2 style="color:white; margin-left:150px;"><ins>CONTACT US</ins> </h2>
+<input type="text"name="sa" value="Your email address" style="margin-left:150px; width: 200px; height:40px;background-color: grey">
+<br />
+<br />
+
+<textarea name="message" rows="10" cols="30" style="margin-left: 150px;background-color: grey;height:100px;width: 200px">
+Message...
+</textarea>
+<br />
+<br />
+
+<button type="button" style="background-color: #0086b3;color: white;width: 50px;height:30px;margin-left: 300px;">Send</button>
+</div>
+</div>
+<div class="y">
+<div class="q">
+<p style="text-align:center;color:grey;margin-left:500px;margin-top:10px;"> @ 2019 Copyright</p>
+<p style="text-align:center;color:white;margin-top:10px;">&nbsp haiot(Happy All in One Travels)</p>
+</div>
+</div>
+</body>
+</html>
